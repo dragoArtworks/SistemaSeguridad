@@ -5,7 +5,7 @@
     <artifactId>sistemaSeguridad</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>sistemaSeguridad-1.0-SNAPSHOT</name>
+    <name>sistemaSeguridad</name>
     
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
