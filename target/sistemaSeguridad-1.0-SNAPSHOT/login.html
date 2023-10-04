@@ -3,13 +3,14 @@
     <head>
         <title>login</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="estilazosSeguridad.css" rel="stylesheet" type="text/css"/>
         <script src="recursos/validacion ingreso.js" type="text/javascript"></script>
     </head>
     <body>
-        <div class="contenedorLogin">
+        <div class="container">
         <form action="login" method="post"
           onsubmit="return ValidarForma(this)">
-            <table >
+            <table width="500">
                 <thead>
                     <tr>
                         <th> login</th> <!-- titulo -->
@@ -17,7 +18,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Usuario/correo</td>
+                        <td class="sugerencias" id="sug">Usuario/correo</td>
                     </tr>
                     <tr>
                         <td>
@@ -25,7 +26,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>contraseña</td>
+                        <td class="sugerencias" id="sug">contraseña</td>
                     </tr>
                     <tr>
                         <td> 
@@ -34,12 +35,12 @@
                     </tr>
                     <tr>
                         <td>
-                             <a href="url" >olvidaste tu contraseña??</a>
+                            <a href="url" class="enlaces" id="reg" >olvidaste tu contraseña??</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="login">
+                            <input type="submit" value="login" class="button">
                         </td>
                     </tr>
                     <tr>
@@ -49,7 +50,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="url">registrate</a>
+                            <a href="url" class="enlaces" id="reg">registrate</a>
                         </td>
                     </tr>
                 </tbody>

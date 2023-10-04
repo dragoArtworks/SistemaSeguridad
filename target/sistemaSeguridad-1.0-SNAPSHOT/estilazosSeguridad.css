@@ -8,13 +8,22 @@ body {
 }
 
 .container {
+    opacity: 80%;
+    background-color:rgb(69, 227, 245) ;
     font-family: monospace; 
     margin: 0 auto;
     text-align: left;
     color: white;
+    border-radius: 30px;
+}
+td.sugerencias{
+    color: rgb(148, 148, 148);
+    font-size: 15px;
 }
 
+
 .header {
+    
     font-family: monospace; 
     text-align: left;
     align-items: center;
@@ -44,20 +53,20 @@ body {
     border-radius: 5%;
     font-size:xx-large;
 }
-
+.enlaces{
+    text-decoration: none;
+    color: rgb(66, 135, 245);
+}
+#reg{
+    font-size:15px ;
+    text-align: left;
+    color: rgb(89, 89, 89);
+}
+table{
+    text-align: center;
+}
 .button:hover {
     background-color: #004466;
-}
-
-.gatoperro{
-    width: 750px;
-    height: 750px;
-    margin-right: 0px;
-    margin-top: 200px;
-}
-
-.gatoperro1{
-    width: 75px;
-    height: 75px;
+    color:white;
 }
 

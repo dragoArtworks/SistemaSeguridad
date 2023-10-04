@@ -32,6 +32,7 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         PrintWriter out =response.getWriter();
         Persona nuevaPersona=new Persona("El", "waos", 1);
+         response.sendRedirect("inicio.html");
     }
    
   
