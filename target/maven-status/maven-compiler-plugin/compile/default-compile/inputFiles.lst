@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\sistemaSeguridad\resources\JavaEE8Resource.java
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\controlador\AgregarAlerta.java
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\sistemaSeguridad\JAXRSConfiguration.java
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\controlador\login.java
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\modelo\Persona.java
 C:\Users\USER\Desktop\proyecto integrador\sistemaSeguridad\src\main\java\modelo\Usuario.java
+=======
+C:\Users\Admin\Documents\Udec\Programacion II Programas\ProyectoGestionConocimiento\SistemaSeguridad\src\main\java\modelo\Persona.java
+C:\Users\Admin\Documents\Udec\Programacion II Programas\ProyectoGestionConocimiento\SistemaSeguridad\src\main\java\modelo\Usuario.java
+C:\Users\Admin\Documents\Udec\Programacion II Programas\ProyectoGestionConocimiento\SistemaSeguridad\src\main\java\controlador\login.java
+C:\Users\Admin\Documents\Udec\Programacion II Programas\ProyectoGestionConocimiento\SistemaSeguridad\src\main\java\sistemaSeguridad\JAXRSConfiguration.java
+C:\Users\Admin\Documents\Udec\Programacion II Programas\ProyectoGestionConocimiento\SistemaSeguridad\src\main\java\sistemaSeguridad\resources\JavaEE8Resource.java
+>>>>>>> 2ed085d09ca9de29f1507b815cf0ffa263524b47
