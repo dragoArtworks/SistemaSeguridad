@@ -1,0 +1,63 @@
+body {
+    font-family: monospace; 
+    background-image: url("imagenes/FondoCalle.jpg");
+    background-size: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:xx-large;
+    display: flex;
+}
+
+.container {
+    font-family: monospace; 
+    margin: 0 auto;
+    text-align: left;
+    color: white;
+}
+
+.header {
+    font-family: monospace; 
+    text-align: left;
+    align-items: center;
+    display: flex;
+    margin-left: 10%;
+}
+
+.texto {
+    font-weight: bold;
+    display: flex;
+}
+
+.button-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 10%;
+}
+
+.button {
+    font-family: monospace; 
+    padding: 10px 20px;
+    background-color:orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+    font-size:xx-large;
+}
+
+.button:hover {
+    background-color: #004466;
+}
+
+.gatoperro{
+    width: 750px;
+    height: 750px;
+    margin-right: 0px;
+    margin-top: 200px;
+}
+
+.gatoperro1{
+    width: 75px;
+    height: 75px;
+}
+
