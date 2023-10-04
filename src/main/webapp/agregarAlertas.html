@@ -5,10 +5,11 @@
         <title>Añadir alertas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="recursos/validacion ingreso.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="contenido">
-            <form action="action" method="post"
+            <form action="agregarAlerta" method="post"
                 onsubmit="return ValidarForma(this)">
                 
                 <table class="alertasTable">
@@ -21,15 +22,19 @@
                     <tr>
                         <td>En que sector ocurrio tu situacion??</td>
                         <td>
-                            <select name="raza" class="default"id="raza">
+                            <select name="sectores" class="default"id="raza">
                         <option value="">seleccionar</option>
                         <option value="1">sector1</option>
-                        <option value="2">sectro2</option>
+                        <option value="2">sector2</option>
+                        <option value="3">sector3</option>
                         </td>
                     </tr>
                     <tr>
-                        <td>Cell3</td>
-                        <td>Cell4</td>
+                        <td>Describe la situacion que te ocurrio</td>
+                        <td><input type="text" name="descripcion"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="publicar"></td>
                     </tr>
                 </table>
             </form>

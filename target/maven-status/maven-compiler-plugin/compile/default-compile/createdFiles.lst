@@ -1,5 +1,6 @@
+controlador\AgregarAlerta.class
+modelo\Persona.class
 sistemaSeguridad\JAXRSConfiguration.class
 controlador\login.class
 modelo\Usuario.class
-modelo\Persona.class
 sistemaSeguridad\resources\JavaEE8Resource.class
