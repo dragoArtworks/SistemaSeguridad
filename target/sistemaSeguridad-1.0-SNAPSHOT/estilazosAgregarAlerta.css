@@ -1,0 +1,92 @@
+body {
+    font-family: monospace; 
+    background-image: url("imagenes/FondoCalle.jpg");
+    background-size: 100%;
+    font-size: x-large;
+    display: flex;
+}
+
+.container {
+    width: 900px;
+    margin-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 90%;
+    background-color:rgb(69, 227, 245) ;
+    text-align: left;
+    color: white;
+    border-radius: 30px;
+}
+td.sugerencias{
+    color: rgb(148, 148, 148);
+    font-size: 15px;
+    text-align: center;
+}
+
+
+#login{
+    border-radius: 30px;
+    width: 100px;
+    height: 30px;
+    padding: auto;
+    font-size: 15px;
+}
+
+.header {
+    
+    font-family: monospace; 
+    text-align: left;
+    align-items: center;
+    display: flex;
+    margin-left: 10%;
+}
+
+.texto {
+    font-weight: bold;
+    display: flex;
+}
+
+.button-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 10%;
+}
+
+.button {
+    font-family: monospace; 
+    padding: 10px 20px;
+    background-color:orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+    font-size:xx-large;
+}
+.enlaces{
+    text-decoration: none;
+    color: rgb(66, 135, 245);
+}
+#reg{
+    font-size:15px ;
+    text-align: left;
+    color: rgb(89, 89, 89);
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alertasTable{
+    text-align: center;
+    align-content: normal;
+}
+
+.button:hover {
+    background-color: #33ff33;
+    color:white;
+}
+
+
+
+

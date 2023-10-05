@@ -5,23 +5,31 @@
         <title>Añadir alertas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilazosAgregarAlerta.css" rel="stylesheet" type="text/css"/>
         <script src="recursos/validacion ingreso.js" type="text/javascript"></script>
     </head>
     <body>
-        <div class="contenido">
+        <div class="container">
             <form action="agregarAlerta" method="post"
                 onsubmit="return ValidarForma(this)">
                 
                 <table class="alertasTable">
-                    <h4>EL sector 1 comprende desde la estacion de buses hasta el semaforo del famisanar</h4>
-                    <h4>El sectro 2 comprende desde famisanar hasta  el semafor del colegio manuela Ayala</h4>
-                    <h4>El sector 3 comprende desde el semafor del maanuela ayala hasta la universidad de cundinamarca</h4>
+                    <section>
+                        <p>             <b>Sector 1:</b><br>
+                        comprende desde la estacion de buses hasta el semaforo del famisanar</p>
+                    </section>
+                    <section> 
+                    <p>Sectro 2:  comprende desde famisanar hasta  el semafor del colegio manuela Ayala</p>
+                    </section>
+                    <section>
+                    <p>Sector 3: comprende desde el semafor del maanuela ayala hasta la universidad de cundinamarca</p>
+                    </section>
                     <tr>
                         <th>Ingresa tu alerta</th>
                     </tr>
                     <tr>
-                        <td>En que sector ocurrio tu situacion??</td>
-                        <td>
+                        <td class="sugerencias" id="sug">En que sector ocurrio tu situacion??</td>
+                        <td class="sugerencias" id="sug">
                             <select name="sectores" class="default"id="raza">
                         <option value="">seleccionar</option>
                         <option value="1">sector1</option>
@@ -30,11 +38,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Describe la situacion que te ocurrio</td>
-                        <td><input type="text" name="descripcion"></td>
+                        <td class="sugerencias" id="sug"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="publicar"></td>
+                        <td class="sugerencias" id="sug">Describe la situación que te ocurrió</td>
+                    </tr>
+                    <tr>
+                        <td class="enlaces" id="reg"><textarea name="descripcion" rows="10" cols="40"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="publicar" class="button"></td>
                     </tr>
                 </table>
             </form>

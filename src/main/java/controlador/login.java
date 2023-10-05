@@ -25,14 +25,14 @@ public class login extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        response.sendRedirect("inicio.html");
+       // response.sendRedirect("inicio.html");
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         PrintWriter out =response.getWriter();
         Persona nuevaPersona=new Persona("El", "waos", 1);
-         response.sendRedirect("inicio.html");
+       response.sendRedirect("inicio.html");
     }
    
   

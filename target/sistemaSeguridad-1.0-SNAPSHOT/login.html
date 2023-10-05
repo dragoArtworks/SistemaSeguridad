@@ -3,17 +3,17 @@
     <head>
         <title>login</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="estilazosSeguridad.css" rel="stylesheet" type="text/css"/>
+        <link href="estilazosLogin.css" rel="stylesheet" type="text/css"/>
         <script src="recursos/validacion ingreso.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
         <form action="login" method="post"
           onsubmit="return ValidarForma(this)">
-            <table width="500">
+            <table class="login" width="500">
                 <thead>
                     <tr>
-                        <th> login</th> <!-- titulo -->
+                        <th class="titulo"> login</th> <!-- titulo -->
                     </tr>
                 </thead>
                 <tbody>
@@ -35,26 +35,20 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="url" class="enlaces" id="reg" >olvidaste tu contraseña??</a>
+                            <a href="url" class="enlaces" id="contraseña" >olvidaste tu contraseña??</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="login" class="button">
+                            <input type="submit" value="login" class="button" id="login">
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            No tienes cuenta??
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="url" class="enlaces" id="reg">registrate</a>
-                        </td>
-                    </tr>
+                    </tr>  
                 </tbody>
             </table>
+            <section>
+                No tienes cuenta??
+                <a href="registrar.html" class="enlaces" id="reg">registrate</a>
+            </section>
 
             </form>
         </div>

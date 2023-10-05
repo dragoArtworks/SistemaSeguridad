@@ -1,72 +1,88 @@
 body {
-    font-family: monospace; 
+    font-family: Roboto,sans-serif; 
+    background-color: rgb(66, 120, 173);
     background-image: url("imagenes/FondoCalle.jpg");
     background-size: 100%;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size:xx-large;
+    font-size:1rem;
     display: flex;
 }
 
 .container {
-    opacity: 80%;
-    background-color:rgb(69, 227, 245) ;
+    opacity: 90%;
+    background-color: rgb(66, 120, 173);
     font-family: monospace; 
-    margin: 0 auto;
+    padding: 3rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
     text-align: left;
     color: white;
-    border-radius: 30px;
+    border-radius: 0.5rem;
 }
-td.sugerencias{
-    color: rgb(148, 148, 148);
-    font-size: 15px;
-}
-
 
 .header {
-    
-    font-family: monospace; 
-    text-align: left;
+    display: flex;
+    justify-content: center; 
     align-items: center;
+    font-family: monospace; 
     display: flex;
-    margin-left: 10%;
-}
-
-.texto {
-    font-weight: bold;
-    display: flex;
+    text-align: center;
 }
 
 .button-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: justify;
     gap: 10px;
-    margin-left: 10%;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 .button {
-    font-family: monospace; 
-    padding: 10px 20px;
+    font-family: roboto,sans-serif; 
     background-color:orange;
-    color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5%;
-    font-size:xx-large;
+    border-radius: 0.5rem;
+    padding: 0.3rem 3rem;
+    font-size:1rem;
 }
 .enlaces{
     text-decoration: none;
-    color: rgb(66, 135, 245);
-}
-#reg{
-    font-size:15px ;
-    text-align: left;
-    color: rgb(89, 89, 89);
-}
-table{
-    text-align: center;
-}
-.button:hover {
-    background-color: #004466;
-    color:white;
+    color: white;
 }
 
+.button:hover {
+    background-color: #33ff33;
+    color:white;
+}
+p{
+ line-height: 2rem; 
+ letter-spacing:0.1rem; 
+     
+}
+.botones{
+    letter-spacing:8rem ;
+    text-align: center;
+    color: orange;
+    border-radius: 0.7rem;
+    border: 1px solid orange;
+    padding-top: 15px;
+}
+.question{
+    text-align: center;
+}
+.subtitulos{
+    font-size: 1.8rem;
+    letter-spacing: 0.05rem;
+    font-size: 2rem;
+    color: orange;
+}
+.subtitles{
+    letter-spacing: 0.05rem;
+    color: orange;
+}
+.titulo{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: orange;
+    
+}

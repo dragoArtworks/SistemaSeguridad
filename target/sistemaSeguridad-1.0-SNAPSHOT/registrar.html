@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilazosLogin.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+        <form action="registrar" method="post"
+          onsubmit="return ValidarForma(this)">
+            <table width="500">
+                <thead>
+                    <tr>
+                        <th class="titulo"> Registrate</th> <!-- titulo -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sugerencias" id="sug">nombre</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="id" name="nombre">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="sugerencias" id="sug">Apellido</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="id" name="apellido">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="sugerencias" id="sug">edad</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="id" name="edad">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sugerencias" id="sug">correo</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="email" id="id" name="correo">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="sugerencias" id="sug">Usuario</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="id" name="usuario">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sugerencias" id="sug">contraseña</td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <input type="password" id="id" minlength="8" name="contrasena"> 
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="registrar" class="button" id="login">
+                        </td>
+                    </tr>
+                            
+                </tbody>
+            </table>
+
+            </form>
+            <section>
+                ya tienes cuenta??
+                <a href="login.html" class="enlaces" id="reg">inicia sesion</a>
+            </section>
+        </div>
+    </body>
+</html>
