@@ -1,0 +1,5 @@
+Estimado erick sang, no se debe ejecutar todo el codigo
+la conexion se encuentra en la siguiente ruta
+-
+-
+src > main > java > datos > conexion.java
