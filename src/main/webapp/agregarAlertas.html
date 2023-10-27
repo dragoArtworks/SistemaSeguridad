@@ -9,49 +9,68 @@
         <script src="recursos/validacion ingreso.js" type="text/javascript"></script>
     </head>
     <body>
+
         <div class="container">
+            <h1 class="titulo">Añadir alertas</h1>
             <form action="agregarAlerta" method="post"
-                onsubmit="return ValidarForma(this)">
-                
-                <table class="alertasTable">
+                  onsubmit="return ValidarForma(this)">
+
+               
                     <section>
-                        <p>             <b>Sector 1:</b><br>
-                        comprende desde la estacion de buses hasta el semaforo del famisanar</p>
+                        <h4 class="subtitles">Sector 1</h4>
+                        <p>
+                            comprende desde la estacion de buses hasta el semaforo del famisanar
+                        </p>
                     </section>
                     <section> 
-                    <p>Sectro 2:  comprende desde famisanar hasta  el semafor del colegio manuela Ayala</p>
+                        <h4 class="subtitles">Sector 2</h4>
+                        <p>comprende desde famisanar hasta  el semaforo del colegio manuela Ayala</p>
                     </section>
                     <section>
-                    <p>Sector 3: comprende desde el semafor del maanuela ayala hasta la universidad de cundinamarca</p>
+                        <h4 class="subtitles">Sector 3</h4>
+                        <p> comprende desde el semaforo del colegio manuela ayala hasta la universidad de cundinamarca</p>
                     </section>
+                        <h3 class="subtitles" id="agregar">Ingresa tu alerta</h3>
+                    <table class="alertasTable">
                     <tr>
-                        <th>Ingresa tu alerta</th>
-                    </tr>
-                    <tr>
-                        <td class="sugerencias" id="sug">En que sector ocurrio tu situacion??</td>
                         <td class="sugerencias" id="sug">
-                            <select name="sectores" class="default"id="raza">
-                        <option value="">seleccionar</option>
-                        <option value="1">sector1</option>
-                        <option value="2">sector2</option>
-                        <option value="3">sector3</option>
+                            ¿En que sector ocurrio tu situacion?
+                        </td>
+                        <td class="sugerencias" id="sug">
+                            <select name="sectores" class="default" id="raza">
+                                <option value="">seleccionar</option>
+                                <option value="1">sector1</option>
+                                <option value="2">sector2</option>
+                                <option value="3">sector3</option>
                         </td>
                     </tr>
                     <tr>
-                        <td class="sugerencias" id="sug"></td>
+                        <td class="sugerencias" id="sug">
+                            ¿Que tipo de situacion experimentaste?          
+                        </td>
+                        <td class="sugerencias" id="sug">
+                            <select name="peligro" class="default" id="raza">
+                                <option value="">seleccionar</option>
+                                <option value="1">robo</option>
+                                <option value="2">intimidacion</option>
+                                <option value="3">secuestro</option>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="sugerencias" id="sug">Describe la situación que te ocurrió</td>
-                    </tr>
-                    <tr>
-                        <td class="enlaces" id="reg"><textarea name="descripcion" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="publicar" class="button"></td>
-                    </tr>
+                    
                 </table>
+                Describe la situación que te ocurrió
+                <section class="textoYBotones" >
+                    <textarea name="descripcion" class="textarea" >
+                    </textarea>
+                    <br>
+                    <input type="submit" value="Publicar" class="button">
+                    <button class="button"><a href="inicio.html" class="enlaces" id="reg">Volver al inicio</a></button>
+                </section>
+
+
+
             </form>
-            
+
         </div>
     </body>
 </html>

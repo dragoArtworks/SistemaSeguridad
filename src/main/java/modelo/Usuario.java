@@ -2,21 +2,34 @@ package modelo;
 
 public class Usuario extends Persona{
     
-    //int id; 
-    String nickName;
-    String correo;
-    String contraseña;
+    private int id; 
+    private String nickName;
+    private String correo;
+    private String contraseña;
 
     public Usuario() {
     }
 
-    public Usuario(String nickName, String correo, String contraseña, String nombre, String apellido, int edad) {
+    public Usuario(int id) {
+        this.id = id;
+    }
+    
+    public Usuario(int id, String nickName, String correo, String contraseña, String nombre, String apellido, int edad) {
         super(nombre, apellido, edad);
+        this.id = id;
         this.nickName = nickName;
         this.correo = correo;
         this.contraseña = contraseña;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNickName() {
         return nickName;
     }

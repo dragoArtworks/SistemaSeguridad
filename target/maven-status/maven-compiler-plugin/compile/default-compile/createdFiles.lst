@@ -1,4 +1,7 @@
-controlador\login.class
+controlador\registrar.class
 controlador\AgregarAlerta.class
-modelo\Usuario.class
 modelo\Persona.class
+datos\Conexion.class
+controlador\login.class
+modelo\Alerta.class
+modelo\Usuario.class

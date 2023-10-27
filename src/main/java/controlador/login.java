@@ -31,8 +31,14 @@ public class login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         PrintWriter out =response.getWriter();
+        
+        //provisioanl para revisara los usuarios
         Persona nuevaPersona=new Persona("El", "waos", 1);
-       response.sendRedirect("inicio.html");
+        String usuario= request.getParameter("usuario");
+        String contrasena=request.getParameter("contrasena");
+        
+        
+        response.sendRedirect("inicio.jsp");
     }
    
   

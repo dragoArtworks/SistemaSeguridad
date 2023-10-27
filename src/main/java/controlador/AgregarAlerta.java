@@ -2,15 +2,18 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Response;
+import modelo.Alerta;
 import modelo.Persona;
 
 @WebServlet("/agregarAlerta")
 public class AgregarAlerta extends HttpServlet{
+    private ArrayList<Alerta> alertas= new ArrayList<>();
 
     public AgregarAlerta() {
     }
@@ -22,7 +25,9 @@ public class AgregarAlerta extends HttpServlet{
      @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         PrintWriter out =response.getWriter();
-        Persona nuevaPersona=new Persona("El", "waos", 1);
+        
+        
+        response.sendRedirect("alertas.html");
     }
    
     
