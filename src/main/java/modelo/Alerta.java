@@ -13,19 +13,43 @@ public class Alerta {
     private String mensaje;
     private String fecha;
     private String lugarOcurrencia;
+    private String peligro;
     private int usuarioId;
 
     public Alerta() {
     }
 
-    public Alerta(int id, String mensaje, String fecha, String lugarOcurrencia, int usuarioId) {
+    public Alerta(int id) {
+        this.id = id;
+    }
+
+    public Alerta(String mensaje, String fecha, String lugarOcurrencia, String peligro) {
+        this.mensaje = mensaje;
+        this.fecha = fecha;
+        this.lugarOcurrencia = lugarOcurrencia;
+        this.peligro = peligro;
+    }
+
+    public Alerta(String mensaje, String fecha, String lugarOcurrencia, String peligro, int usuarioId) {
+        this.mensaje = mensaje;
+        this.fecha = fecha;
+        this.lugarOcurrencia = lugarOcurrencia;
+        this.peligro = peligro;
+        this.usuarioId = usuarioId;
+    }
+
+    public Alerta(int id, String mensaje, String fecha, String lugarOcurrencia, String peligro, int usuarioId) {
         this.id = id;
         this.mensaje = mensaje;
         this.fecha = fecha;
         this.lugarOcurrencia = lugarOcurrencia;
+        this.peligro = peligro;
         this.usuarioId = usuarioId;
     }
-
+    
+    
+    
+    
     public int getId() {
         return id;
     }
@@ -58,6 +82,15 @@ public class Alerta {
         this.lugarOcurrencia = lugarOcurrencia;
     }
 
+    public String getPeligro() {
+        return peligro;
+    }
+
+    public void setPeligro(String peligro) {
+        this.peligro = peligro;
+    }
+    
+    
     public int getUsuarioId() {
         return usuarioId;
     }

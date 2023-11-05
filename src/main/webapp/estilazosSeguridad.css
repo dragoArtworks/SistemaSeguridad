@@ -9,6 +9,7 @@ body {
 
 .container {
     opacity: 90%;
+    width: 10000px;
     background-color: rgb(66, 120, 173);
     font-family: monospace; 
     padding: 3rem;
@@ -17,6 +18,15 @@ body {
     text-align: left;
     color: white;
     border-radius: 0.5rem;
+}
+.separador{
+    background-color: rgb(104, 164, 222);
+    border-radius: inherit;
+    font-size: 30px;
+}
+.fecha{
+    justify-content:right;
+    font-size: 20px;
 }
 
 .header {
@@ -44,6 +54,10 @@ body {
     border-radius: 0.5rem;
     padding: 0.3rem 3rem;
     font-size:1rem;
+    display: inline;
+}
+submit{
+    display: inherit;
 }
 .enlaces{
     text-decoration: none;
@@ -58,6 +72,13 @@ p{
  line-height: 2rem; 
  letter-spacing:0.1rem; 
      
+}
+ul{
+    grid-column: 2;
+    list-style: none;
+}
+h4{
+    display: inline;
 }
 .botones{
     letter-spacing:8rem ;

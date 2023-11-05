@@ -1,0 +1,34 @@
+<c:forEach var="alerta" items="${alertas}">
+                <div class="separador">
+                    <ul>
+                        <li><input type="hidden" id="id" name="id" value="${alerta.id}"></li>
+                        <li><h4 class="descripcion">Problema: </h4>${alerta.mensaje} </li>
+                        <li><h4 class="descripcion">fecha: </h4>${alerta.fecha}</li>
+                        <li><h4 class="descripcion">Sector: </h4>${alerta.lugarOcurrencia}</li>
+                    </ul>
+                </div>
+            </c:forEach>
+
+// Obtener el elemento HTML que contiene la fecha
+const fechaElement = document.getElementById('fechaOriginal');
+// Obtener el contenido (texto) de la fecha
+const fechaTexto = fechaElement.textContent;
+
+// Convertir la fecha a un objeto Date
+const fecha = new Date(fechaTexto);
+
+// Crear un array de nombres de meses
+const meses = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+];
+
+// Obtener el día, mes y año de la fecha
+const dia = fecha.getDate();
+const mes = fecha.getMonth(); // Devuelve un número de 0 a 11
+const anno = fecha.getFullYear();
+
+// Formatear la fecha con el nuevo formato
+const nuevaFecha = `${dia} de ${meses[mes]} de ${anno}`;
+
+// Actualizar el contenido del elemento HTML con el nuevo formato
+fechaElement.textContent = nuevaFecha;

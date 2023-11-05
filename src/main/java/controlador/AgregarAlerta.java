@@ -1,34 +1,68 @@
 package controlador;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import datos.AlertasDAO;
+import datos.UsuarioDAO;
+import java.io.*;
+import java.util.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.core.Response;
+import javax.servlet.http.*;
 import modelo.Alerta;
-import modelo.Persona;
+import modelo.Usuario;
 
 @WebServlet("/agregarAlerta")
-public class AgregarAlerta extends HttpServlet{
-    private ArrayList<Alerta> alertas= new ArrayList<>();
+public class AgregarAlerta extends HttpServlet {
 
+    private List<Alerta> alertas = new ArrayList<>();
+    private List<Usuario> usuarios= new ArrayList<>();
+    AlertasDAO nuevaAlertaDAO = new AlertasDAO();
+    UsuarioDAO nuevoUsuarioDAO = new UsuarioDAO();
     public AgregarAlerta() {
     }
-   
+
     @Override
-    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
-        response.sendRedirect("alertas.html");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+     HttpSession sesion = request.getSession();
+     alertas = nuevaAlertaDAO.seleccionar();
+     usuarios=nuevoUsuarioDAO.seleccionar();
+     
+     sesion.setAttribute("usuarios", usuarios);
+     sesion.setAttribute("alertas", alertas);
+     RequestDispatcher rd = request.getRequestDispatcher("mostrarAlertas.jsp");
+     rd.forward(request, response);
     }
-     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        PrintWriter out =response.getWriter();
-        
-        
-        response.sendRedirect("alertas.html");
-    }
-   
     
+    
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        PrintWriter out = response.getWriter();
+        String eliminar=request.getParameter("eliminar");
+        String id=request.getParameter("id");
+        int id1=Integer.parseInt(id);
+        if(eliminar.equals("true")){
+            Alerta alertaeliminar=new Alerta(id1);
+            nuevaAlertaDAO.eliminar(alertaeliminar);
+            System.out.println("h\no\nl\na");
+        }else{
+        String mensaje = request.getParameter("mensaje");
+        String fecha = request.getParameter("fecha");
+        String lugarOcurrencia = request.getParameter("sectores");
+        String peligro=request.getParameter("peligro");
+        String usuario=request.getParameter("id_usuario");
+        int usuarioId=Integer.parseInt(usuario);
+
+        //insertar
+        Alerta nueAlerta = new Alerta(mensaje, fecha, lugarOcurrencia, peligro, usuarioId);
+        nuevaAlertaDAO.insertar(nueAlerta);
+        }
+        alertas = nuevaAlertaDAO.seleccionar();
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("alertas", alertas);
+        RequestDispatcher rd = request.getRequestDispatcher("mostrarAlertas.jsp");
+        rd.forward(request, response);
+        
+    }
+
 }

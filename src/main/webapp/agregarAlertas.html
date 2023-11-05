@@ -15,23 +15,23 @@
             <form action="agregarAlerta" method="post"
                   onsubmit="return ValidarForma(this)">
 
-               
-                    <section>
-                        <h4 class="subtitles">Sector 1</h4>
-                        <p>
-                            comprende desde la estacion de buses hasta el semaforo del famisanar
-                        </p>
-                    </section>
-                    <section> 
-                        <h4 class="subtitles">Sector 2</h4>
-                        <p>comprende desde famisanar hasta  el semaforo del colegio manuela Ayala</p>
-                    </section>
-                    <section>
-                        <h4 class="subtitles">Sector 3</h4>
-                        <p> comprende desde el semaforo del colegio manuela ayala hasta la universidad de cundinamarca</p>
-                    </section>
-                        <h3 class="subtitles" id="agregar">Ingresa tu alerta</h3>
-                    <table class="alertasTable">
+
+                <section>
+                    <h4 class="subtitles">Sector 1</h4>
+                    <p>
+                        comprende desde la estacion de buses hasta el semaforo del famisanar
+                    </p>
+                </section>
+                <section> 
+                    <h4 class="subtitles">Sector 2</h4>
+                    <p>comprende desde famisanar hasta  el semaforo del colegio manuela Ayala</p>
+                </section>
+                <section>
+                    <h4 class="subtitles">Sector 3</h4>
+                    <p> comprende desde el semaforo del colegio manuela ayala hasta la universidad de cundinamarca</p>
+                </section>
+                <h3 class="subtitles" id="agregar">Ingresa tu alerta</h3>
+                <table class="alertasTable">
                     <tr>
                         <td class="sugerencias" id="sug">
                             ¿En que sector ocurrio tu situacion?
@@ -39,9 +39,9 @@
                         <td class="sugerencias" id="sug">
                             <select name="sectores" class="default" id="raza">
                                 <option value="">seleccionar</option>
-                                <option value="1">sector1</option>
-                                <option value="2">sector2</option>
-                                <option value="3">sector3</option>
+                                <option value="sector 1">sector1</option>
+                                <option value="sector 2">sector2</option>
+                                <option value="sector 3">sector3</option>
                         </td>
                     </tr>
                     <tr>
@@ -51,22 +51,36 @@
                         <td class="sugerencias" id="sug">
                             <select name="peligro" class="default" id="raza">
                                 <option value="">seleccionar</option>
-                                <option value="1">robo</option>
-                                <option value="2">intimidacion</option>
-                                <option value="3">secuestro</option>
+                                <option value="robo">robo</option>
+                                <option value="intimidacion">intimidacion</option>
+                                <option value="secuestro">secuestro</option>
                         </td>
                     </tr>
-                    
+                    <tr>
+                        <td class="sugerencias" id="sug">
+                            Fecha de ocurrencia del suceso:
+                        </td>
+                        <td>
+                            <input type="date" name="fecha" class="default"> 
+                        </td>
+                    </tr>
+
                 </table>
                 Describe la situación que te ocurrió
                 <section class="textoYBotones" >
-                    <textarea name="descripcion" class="textarea" >
+                    <textarea name="mensaje" class="textarea" >
                     </textarea>
                     <br>
                     <input type="submit" value="Publicar" class="button">
-                    <button class="button"><a href="inicio.html" class="enlaces" id="reg">Volver al inicio</a></button>
-                </section>
+                    <button class="button"><a href="inicio.jsp" class="enlaces" id="reg">Volver al inicio</a></button>
+                </section>  
 
+                <!--
+                
+                Importante revisar
+                esto y corregirlo                
+                -->
+                <input type="hidden" id="id" name="id_usuario" value="2">
 
 
             </form>

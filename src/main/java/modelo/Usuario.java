@@ -5,7 +5,7 @@ public class Usuario extends Persona{
     private int id; 
     private String nickName;
     private String correo;
-    private String contraseña;
+    private String contrasena;
 
     public Usuario() {
     }
@@ -13,13 +13,20 @@ public class Usuario extends Persona{
     public Usuario(int id) {
         this.id = id;
     }
+
+    public Usuario(String nickName, String correo, String contrasena, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.nickName = nickName;
+        this.correo = correo;
+        this.contrasena = contrasena;
+    }
     
-    public Usuario(int id, String nickName, String correo, String contraseña, String nombre, String apellido, int edad) {
+    public Usuario(int id, String nickName, String correo, String contrasena, String nombre, String apellido, int edad) {
         super(nombre, apellido, edad);
         this.id = id;
         this.nickName = nickName;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public int getId() {
@@ -46,18 +53,19 @@ public class Usuario extends Persona{
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "nickName=" + nickName + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + '}';
+        return "Usuario{" + "id=" + id + ", nickName=" + nickName + ", correo=" + correo + ", contrasena=" + contrasena + '}';
     }
-    
+
+  
     
 }
