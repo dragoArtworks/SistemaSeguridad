@@ -4,61 +4,44 @@
  */
 package controlador;
 
+import datos.UsuarioDAO;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import modelo.Persona;
+import modelo.Usuario;
 
 @WebServlet("/login")
 
 public class validaUsuario extends HttpServlet {
+
+    private List<Usuario> usuarios = new ArrayList<>();
+    UsuarioDAO newUsuarioDAO = new UsuarioDAO();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String usuario = request.getParameter("usuario");
         String contrasena = request.getParameter("contrasena");
 
-        
-        String jdbcUrl = "jdbc:mysql://localhost:3306/seguridad";
-        String dbUsuario = "root";
-        String dbContrasena = "";
+        Usuario newUsuario = new Usuario(contrasena, usuario);
 
-        try {
-            Connection connection = DriverManager.getConnection(jdbcUrl, dbUsuario, dbContrasena);
-
+        if (newUsuarioDAO.SeleccionarUser(newUsuario)!=null) {
+            Usuario nuevoUsuario=newUsuarioDAO.SeleccionarUser(newUsuario);
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("user", nuevoUsuario);
+            RequestDispatcher rd = request.getRequestDispatcher("inicio.jsp");
+            rd.forward(request, response);
+        } else {
+            response.sendRedirect("login.html");
             
-            String consulta = "SELECT * FROM usuarios WHERE nombre = ? AND contrasena = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(consulta);
-            preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, contrasena);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            if (resultSet.next()) {
-                
-                response.setContentType("text/html");
-                PrintWriter out = response.getWriter();
-                out.println("<html><body>");
-                out.println("<h2>Bienvenido, " + usuario + "!</h2>");
-                out.println("</body></html>");
-                
-                response.sendRedirect("inicio.jsp");
-            } else {
-                
-                response.setContentType("text/html");
-                PrintWriter out = response.getWriter();
-                out.println("<html><body>");
-                out.println("<h2>Autenticación fallida. Por favor, verifica tu usuario y contraseña.</h2>");
-                out.println("</body></html>");
-            }
-
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }

@@ -55,7 +55,7 @@ public class AlertasDAO {
         try {
             conn=getConnection();
             stmt=conn.prepareStatement(JDBC_INSERT);
-            stmt.setString(1, alerta.getMensaje());
+            stmt.setString(1,alerta.getMensaje());
             stmt.setString(2,alerta.getFecha());
             stmt.setString(3,alerta.getLugarOcurrencia());
             stmt.setString(4,alerta.getPeligro());

@@ -3,11 +3,14 @@ package datos;
 import static datos.ConexionII.*;
 import java.sql.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Usuario;
 
 public class UsuarioDAO {
 
     public static final String JDBC_SELECT = "SELECT id,nombre,apellido,nickname,edad, password,email FROM usuario ";
+    public static final String JDBC_SELECT_USUARIO="SELECT id, nombre, password FROM usuario WHERE nombre=? AND password =?";
     public static final String JDBC_INSERT = "INSERT INTO usuario(nombre,apellido,nickname,edad,password,email) VALUES(?,?,?,?,?,?)";
     public static final String JDBC_UPDATE = "UPDATE usuario SET nombre=?,apellido=?, nickname=?,edad=?,password=?,email=? WHERE id=?";
     public static final String JDBC_DELETE = "DELETE FROM usuario WHERE id=?";
@@ -47,7 +50,39 @@ public class UsuarioDAO {
         }
         return usuarios;
     }
-
+    public Usuario SeleccionarUser(Usuario usuario){
+        Connection conn = null;
+        ResultSet rs = null;
+        PreparedStatement stmt = null;
+        Usuario nuevoUsuario = null;
+        
+        try {
+            conn=getConnection();
+            stmt=conn.prepareStatement(JDBC_SELECT_USUARIO);
+            
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getContrasena());
+            //int registros=stmt.executeUpdate();
+            rs=stmt.executeQuery(); 
+            if (rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String contrasena = rs.getString("password");
+                nuevoUsuario=new Usuario(contrasena, nombre);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }finally{
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return nuevoUsuario;
+    }
     public int insertar(Usuario usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;

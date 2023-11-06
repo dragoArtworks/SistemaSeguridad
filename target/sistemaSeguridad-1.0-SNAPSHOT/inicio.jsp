@@ -57,8 +57,6 @@
                         "Seguridad Urbana", puedes contribuir a la seguridad de tu comunidad compartiendo alertas en 
                         tiempo real. Describe la situación detalladamente para que otros usuarios estén al tanto y puedan
                         tomar medidas adecuadas.
-
-
                     </p>
                     <br/>
                     <h3 class="question">¿Que deseas hacer?</h3>

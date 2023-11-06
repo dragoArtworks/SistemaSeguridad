@@ -41,6 +41,8 @@ public class AgregarAlerta extends HttpServlet {
         String eliminar=request.getParameter("eliminar");
         String id=request.getParameter("id");
         int id1=Integer.parseInt(id);
+        
+        
         if(eliminar.equals("true")){
             Alerta alertaeliminar=new Alerta(id1);
             nuevaAlertaDAO.eliminar(alertaeliminar);
