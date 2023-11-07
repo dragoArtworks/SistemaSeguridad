@@ -3,8 +3,12 @@
     Created on : 27/10/2023, 10:46:53 a. m.
     Author     : USER
 --%>
-
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    Usuario nUsuario = (Usuario) session.getAttribute("user");
+%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -19,9 +23,25 @@
         <div class="container">
             <header>
                 <section class="botones">
-                    <button class="button"><a href="agregarAlertas.html" class="enlaces" id="reg">crear alerta</a></button>
-                    <form action="agregarAlerta">
-                        <input type="submit" method="get" value="consultar alertas" class="button" id="reg">
+                    <form action="agregarAlerta" method="post" >
+                        <input type="hidden" id="id" name="idUser" value="<%=nUsuario.getId()%>">
+                        <input type="hidden" id="id" name="nombreUser" value="<%=nUsuario.getNickName()%>">
+                        <input type="hidden" id="id" name="contrasenaUser" value="<%=nUsuario.getContrasena()%>">
+                        <input type="hidden" id="id" name="agregar" value="false">
+                        <input type="hidden" id="id" name="eliminar" value="false">
+                        <input type="hidden" id="id" name="mostrar" value="false">
+                        <input type="hidden" id="id" name="enviarId" value="true">
+                        <input type="submit" value="crear alertas" class="button" id="reg">
+                    </form>
+                    <form action="agregarAlerta"  method="post" >
+                        <input type="hidden" id="id" name="idUser" value="<%=nUsuario.getId()%>">
+                        <input type="hidden" id="id" name="nombreUser" value="<%=nUsuario.getNickName()%>">
+                        <input type="hidden" id="id" name="contrasenaUser" value="<%=nUsuario.getContrasena()%>">
+                        <input type="hidden" id="id" name="agregar" value="false">
+                        <input type="hidden" id="id" name="eliminar" value="false">
+                        <input type="hidden" id="id" name="mostrar" value="true">
+                        <input type="hidden" id="id" name="enviarId" value="true">
+                        <input type="submit" value="ver alertas" class="button" id="reg">
                     </form>
                 </section>
             </header>
@@ -61,12 +81,7 @@
                     <br/>
                     <h3 class="question">¿Que deseas hacer?</h3>
                 </section>
-                <section class="botones">
-                    <button class="button"><a href="agregarAlertas.html" class="enlaces" id="reg">crear alerta</a></button>
-                    <form action="agregarAlerta" method="get">
-                        <input type="submit" value="consultar alertas" class="button" id="reg">
-                    </form>
-                </section>
+
             </div>
 
         </div>

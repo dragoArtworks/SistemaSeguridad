@@ -31,7 +31,7 @@ public class validaUsuario extends HttpServlet {
         String usuario = request.getParameter("usuario");
         String contrasena = request.getParameter("contrasena");
 
-        Usuario newUsuario = new Usuario(contrasena, usuario);
+        Usuario newUsuario = new Usuario(contrasena, usuario) ;
 
         if (newUsuarioDAO.SeleccionarUser(newUsuario)!=null) {
             Usuario nuevoUsuario=newUsuarioDAO.SeleccionarUser(newUsuario);

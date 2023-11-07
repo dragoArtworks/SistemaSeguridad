@@ -10,7 +10,7 @@ public class AlertasDAO {
     private final String JDBC_SELECT=" SELECT id,mensaje,fecha,lugar_ocurrencia,peligro,id_usuario FROM alertas1 ";
     private final String JDBC_INSERT=" INSERT INTO alertas1(mensaje,fecha,lugar_ocurrencia,peligro, id_usuario) VALUES(?,?,?,?,?)";
     private final String JDBC_UPDATE="UPDATE alertas1 SET mensaje=?,fecha=?,lugar_ocurrencia=? peligro=? WHERE ID=?" ;
-    private final String JDBC_DELETE="DELETE WHERE id=?";
+    private final String JDBC_DELETE="DELETE FROM alertas1 WHERE id= ?";
     
     public List<Alerta> seleccionar(){
         Connection conn=null;
@@ -109,7 +109,7 @@ public class AlertasDAO {
         try {
             conn=getConnection();
             stmt=conn.prepareStatement(JDBC_DELETE);
-            stmt.setInt(1,alerta.getUsuarioId());
+            stmt.setInt(1,alerta.getId());
             registros=stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

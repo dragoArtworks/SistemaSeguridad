@@ -13,6 +13,7 @@
     HttpSession sesion = request.getSession();
     ArrayList<Usuario> usuarios = (ArrayList<Usuario>) session.getAttribute("usuarios");
     ArrayList<Alerta> alertas = (ArrayList<Alerta>) session.getAttribute("alertas");
+    Usuario nUsuario = (Usuario) session.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@
         <div class="container">
 
             <div class="header">
-                <h1 class="titulo">Sistema de Seguridad</h1>
+                <h2 class="titulo">bienvenido <%= nUsuario.getNickName()%></h2>
 
             </div>
 
@@ -35,31 +36,38 @@
             <div class="separador">
                 <ul>
                     <%
+                        int id = 0;
                         if (alert != null) {
                             for (Usuario user : usuarios) {
                                 if (user.getId() == alert.getUsuarioId()) {
-                    %>  
+                                
+                    %> 
                     <h1 class="titulo"><%=user.getNickName()%> posteo : </h1>
                     <%
+                                    id = user.getId();
                                 }
                             }
                         }
                     %>  
-                    
+
                     <li><h4 class="descripcion">Sufrio <%= alert.getPeligro()%> en el <%=alert.getLugarOcurrencia()%></h4> </li>
-                    <li><h4 class="descripcion"><%= alert.getMensaje()%> </h4> </li>
+                    <li><h3 class="mensaje"><%= alert.getMensaje()%> </h3> </li>
                     <li><h4 class="fecha">fecha de ocurrencia del suceso <%= alert.getFecha()%> </h4> </li>
+                        <%if (nUsuario.getId() == id) {%>
                     <form action="agregarAlerta" method="post">
+                        <li><input type="hidden" name="idUser" value="<%= id%>"></li>
                         <li><input type="hidden" name="id" value="<%= alert.getId()%>"></li>
-                        <li><input type="hidden" name="eliminar" value="true"></li>
+                        <li><input type="hidden" id="id" name="agregar" value="false"></li>
+                        <li><input type="hidden" id="id" name="eliminar" value="true"></li>
+                        <li><input type="hidden" id="id" name="mostrar" value="false"></li>
+                        <li><input type="hidden" id="id" name="enviarId" value="true"></li>
                         <input type="submit" value="eliminar">
                     </form>
+                    <%}
+
+                    %>
                 </ul>
             </div>
-            <!-- 
-            
-            <li><h4 class="descripcion">fecha:<%= alert.getLugarOcurrencia()%> </h4></li>
-            -->
             <% }
 
             } else { %>
@@ -71,8 +79,27 @@
 
 
             <section class="botones">
-                <button class="button"><a href="inicio.jsp" class="enlaces" id="reg">inicio</a></button>
-                <button class="button"><a href="agregarAlertas.html" class="enlaces" id="reg">agregar alertas</a></button><br><br>
+                <form  action="agregarAlerta" method="post" >
+                    <input type="hidden" id="id" name="idUser" value="<%=nUsuario.getId()%>">
+                    <input type="hidden" id="id" name="nombreUser" value="<%=nUsuario.getNickName()%>">
+                    <input type="hidden" id="id" name="contrasenaUser" value="<%=nUsuario.getContrasena()%>">
+                    <input type="hidden" id="id" name="agregar" value="false">
+                    <input type="hidden" id="id" name="eliminar" value="false">
+                    <input type="hidden" id="id" name="mostrar" value="false">
+                    <input type="hidden" id="id" name="enviarId" value="true">
+                    <input type="submit" value="crear alertas" class="button" id="reg1">
+                </form>
+                <form action="agregarAlerta" method="post">
+                    <input type="hidden" id="id" name="idUser" value="<%=nUsuario.getId()%>">
+                    <input type="hidden" id="id" name="nombreUser" value="<%=nUsuario.getNickName()%>">
+                    <input type="hidden" id="id" name="contrasenaUser" value="<%=nUsuario.getContrasena()%>">
+                    <input type="hidden" id="id" name="agregar" value="false">
+                    <input type="hidden" id="id" name="eliminar" value="false">
+                    <input type="hidden" id="id" name="mostrar" value="false">
+                    <input type="hidden" id="id" name="enviarId" value="false">
+                    <input type="submit" value="inicio" class="button" id="reg2">
+                </form>
+
             </section>
 
         </div>

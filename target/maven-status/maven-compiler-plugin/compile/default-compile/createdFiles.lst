@@ -1,11 +1,12 @@
 datos\ConexionII.class
-datos\AlertasDAO.class
 controlador\registrar.class
-controlador\AgregarAlerta.class
 controlador\validaUsuario.class
 datos\UsuarioDAO.class
-modelo\Persona.class
-datos\Conexion.class
 Test\TestManejoUsuarios.class
+datos\AlertasDAO.class
+controlador\AgregarAlerta.class
+modelo\Persona.class
+controlador\EliminarAlerta.class
+datos\Conexion.class
 modelo\Alerta.class
 modelo\Usuario.class

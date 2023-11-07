@@ -10,7 +10,7 @@ import modelo.Usuario;
 public class UsuarioDAO {
 
     public static final String JDBC_SELECT = "SELECT id,nombre,apellido,nickname,edad, password,email FROM usuario ";
-    public static final String JDBC_SELECT_USUARIO="SELECT id, nombre, password FROM usuario WHERE nombre=? AND password =?";
+    public static final String JDBC_SELECT_USUARIO="SELECT id, nickname, password FROM usuario WHERE nombre=? AND password =?";
     public static final String JDBC_INSERT = "INSERT INTO usuario(nombre,apellido,nickname,edad,password,email) VALUES(?,?,?,?,?,?)";
     public static final String JDBC_UPDATE = "UPDATE usuario SET nombre=?,apellido=?, nickname=?,edad=?,password=?,email=? WHERE id=?";
     public static final String JDBC_DELETE = "DELETE FROM usuario WHERE id=?";
@@ -66,9 +66,9 @@ public class UsuarioDAO {
             rs=stmt.executeQuery(); 
             if (rs.next()){
                 int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
+                String nickname = rs.getString("nickname");
                 String contrasena = rs.getString("password");
-                nuevoUsuario=new Usuario(contrasena, nombre);
+                nuevoUsuario=new Usuario(contrasena, id, nickname);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

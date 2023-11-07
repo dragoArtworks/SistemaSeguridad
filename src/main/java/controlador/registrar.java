@@ -41,9 +41,10 @@ public class registrar extends HttpServlet{
         usuarios=nuevoUsuarioDAO.seleccionar();
         //usuarios.add(nueUsuario);
         
-       HttpSession sesion =request.getSession();
-       sesion.setAttribute("usuarios", usuarios);
-       RequestDispatcher rd = request.getRequestDispatcher("mostrarAlertas.jsp");
-       rd.forward(request, response);
+        response.sendRedirect("login.html");
+//       HttpSession sesion =request.getSession();
+//       sesion.setAttribute("usuarios", usuarios);
+//       RequestDispatcher rd = request.getRequestDispatcher("mostrarAlertas.jsp");
+//       rd.forward(request, response);
     }
 }

@@ -22,7 +22,10 @@ public class Alerta {
     public Alerta(int id) {
         this.id = id;
     }
-
+    public Alerta(int usuarioId,int id) {
+        this.usuarioId = usuarioId;
+    }
+    
     public Alerta(String mensaje, String fecha, String lugarOcurrencia, String peligro) {
         this.mensaje = mensaje;
         this.fecha = fecha;

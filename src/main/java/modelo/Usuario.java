@@ -14,6 +14,11 @@ public class Usuario extends Persona{
         this.id = id;
     }
 
+    public Usuario(int id, String nombre) {
+        super(nombre);
+        this.id = id;
+    }
+    
     public Usuario(String contrasena, String nombre) {
         super(nombre);
         this.contrasena = contrasena;
@@ -24,6 +29,12 @@ public class Usuario extends Persona{
         this.id = id;
         this.contrasena = contrasena;
     }
+    public Usuario( String contrasena,int id, String nickname) {
+        this.id = id;
+        this.nickName=nickname;
+        this.contrasena = contrasena;
+    }
+    
     
     public Usuario(String nickName, String correo, String contrasena, String nombre, String apellido, int edad) {
         super(nombre, apellido, edad);
